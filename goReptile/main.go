@@ -11,7 +11,7 @@ import (
 func main() {
 	fmt.Println("我的程序goReptile start...")
 	//股票代码
-	stockList := []string{"002351", "000673", "300315", "002463", "300201"}
+	stockList := []string{"002351", "002230", "002463", "002475", "300057", "002611", "002697", "300315", "600703", "601318"}
 	//获取股票信息
 	// var resList list.List
 	// resList = stockUtil.GetStockInfo(&stockList)
@@ -22,7 +22,7 @@ func main() {
 	for {
 		resList := stockUtil.GetStockDetailInfo(&stockList)
 		stockUtil.PrintStockDetailInfo(&resList)
-		time.Sleep(5 * time.Second) //延时
+		time.Sleep(30 * time.Second) //延时
 	}
 
 	util.Pause()

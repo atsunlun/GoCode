@@ -185,8 +185,6 @@ func parsingStockDetailInfo(inList *list.List) list.List {
 					fallthrough
 				case 38:
 					fallthrough
-				case 39:
-					fallthrough
 				case 43:
 					arrStr += "%"
 				}
@@ -223,7 +221,13 @@ func PrintStockDetailInfo(inList *list.List) {
 			continue
 		}
 		for j := 0; j <= size; j++ {
-			v, ok := valueMap[j]
+			index := j
+			if 3 == j {
+				index = 32 //互换位置
+			} else if 32 == j {
+				index = 3
+			}
+			v, ok := valueMap[index]
 			if !ok {
 				continue
 			}
